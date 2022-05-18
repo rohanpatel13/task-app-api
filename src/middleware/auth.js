@@ -7,7 +7,7 @@
 
     try{
         const token = req.header('Authorization').replace('Bearer ','')
-        const validate = jwt.verify(token,'rohan')
+        const validate = jwt.verify(token,process.env.JWT_SECRET)
         const user = await User.findOne({_id: validate._id,'tokens.token': token})
 
         if(!user){

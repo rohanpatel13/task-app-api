@@ -1,5 +1,6 @@
 const express = require("express")
 const  multer = require('multer')
+require('dotenv').config()
 require('./src/db/mongoose.js')
 const User = require('./src/models/user')
 const app = express()
@@ -48,7 +49,7 @@ app.post('/upload',upload.single('upload'),(req,res)=>{
 
 // const jwt = require('jsonwebtoken')
 // const myFunc = async () =>{
-//     const token = jwt.sign({_id: 'abcd13'},'rohan',{expiresIn: '0 seconds'})
+//     const token = jwt.sign({_id: 'abcd13'},,{expiresIn: '0 seconds'})
 //     console.log(token)
 
 //     const data = jwt.verify(token,'rohan')
