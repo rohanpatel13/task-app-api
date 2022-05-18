@@ -16,10 +16,13 @@ const port = process.env.PORT
 
 const userRouter = require('./src/routers/user')
 const taskRouter = require('./src/routers/task')
+const checkRouter = require('./src/routers/check')
+
 
 app.use(express.json())
 app.use(userRouter)
 app.use(taskRouter)
+app.use(checkRouter)
 
 const upload = multer({
     dest: 'images'
